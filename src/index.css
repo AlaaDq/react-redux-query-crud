@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Apercu';
+  src: local('Apercu'), url('/public/fonts/ApercuRegular.woff2') format('woff2');
+  font-display: swap;
+}
+
+body {
+  color: '#ccd6f6';
+  font-family: Apercu;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #000;
+  /* @apply bg-black */
+  @apply text-secondary;
+}
+
+button,
+button[type='submit'] {
+  @apply bg-black;
+  @apply text-white;
+  @apply rounded-md;
+  @apply px-3;
+  @apply py-2;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  button,
+  button[type='submit'] {
+    @apply min-w-[100px];
+  }
+}
